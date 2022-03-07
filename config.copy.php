@@ -85,7 +85,7 @@ function login(){
 	if (count($errors) == 0) {
 		$password = md5($password);
 
-		$query = "SELECT users.id, email, user_type, first_name, middle_name, last_name, profile_pic FROM users, borrowers WHERE email='$email' AND password='$password' AND users.id = borrowers.id LIMIT 1";
+		$query = "SELECT users.id, email, user_type, first_name, middle_name, last_name, profile_img FROM users, borrowers WHERE email='$email' AND password='$password' AND users.id = borrowers.id LIMIT 1";
 		$results = mysqli_query($db, $query);
 
 		if (mysqli_num_rows($results) == 1) { // user found
@@ -280,7 +280,7 @@ function register(){
 			$query = "INSERT INTO users (email, password, user_type, status, created_at, updated_at) 
 					  VALUES('$email', '$password', '$user_type', '$status', '$curtmtmp', '$curtmtmp')";
 
-			$query .= "INSERT INTO borrowers (first_name, middle_name, last_name, contact, profile_pic, created_at, updated_at) 
+			$query .= "INSERT INTO borrowers (first_name, middle_name, last_name, contact, profile_img, created_at, updated_at) 
 					  VALUES('$firstname', '$middlename', '$lastname', '$contact', '$profilepic', '$curtmtmp', '$curtmtmp')";
 
 			mysqli_multi_query($db, $query);
@@ -291,7 +291,7 @@ function register(){
 			$query = "INSERT INTO users (email, password, user_type, status, created_at, updated_at) 
 					  VALUES('$email', '$password', 'user', '$status', '$curtmtmp', '$curtmtmp');";
 
-			$query .= "INSERT INTO borrowers (first_name, middle_name, last_name, contact, profile_pic, created_at, updated_at) 
+			$query .= "INSERT INTO borrowers (first_name, middle_name, last_name, contact, profile_img, created_at, updated_at) 
 					  VALUES('$firstname', '$middlename', '$lastname', '$contact', '$profilepic', '$curtmtmp', '$curtmtmp')";
 
 			mysqli_multi_query($db, $query);

@@ -4,6 +4,11 @@
         define( 'ROOT_PATH', $_SERVER['DOCUMENT_ROOT'] . '/CCCLMS/' );
     }
     include_once(ROOT_PATH . '/config.php');
+    if (!isset($_SESSION['user']))
+    {
+        header("Location: login.php");
+        die();
+    } 
     
 ?>
     <!-- Start Left menu area -->
@@ -31,8 +36,8 @@
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Students" href="users.php"><span class="mini-sub-pro">All Users</span></a></li>
+                                <li><a title="Add Students" href="pending.php"><span class="mini-sub-pro">Pending</span></a></li>
                                 <li><a title="Add Students" href="add-user.php"><span class="mini-sub-pro">Add User</span></a></li>
-                                <li><a title="Add Students" href="#"><span class="mini-sub-pro">Pending</span></a></li>
                             </ul>
                         </li>
                         <!-- Library Assets Section -->
@@ -187,7 +192,7 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<img src="img/profile/<?php echo $_SESSION['user']['profile_pic']; ?>" alt="" />
+															<img src="img/profile/<?php echo $_SESSION['user']['profile_img']; ?>" alt="" />
 															<span class="admin-name"><?php echo $_SESSION['user']['first_name'] . ' ' . $_SESSION['user']['last_name']; ?></span>
 															<i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
 														</a>
@@ -228,12 +233,9 @@
                                         
                                         <li><a data-toggle="collapse" data-target="#demoevent" href="#">Users <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                             <ul id="demoevent" class="collapse dropdown-header-top">
-                                                <li><a href="all-professors.html">All Users</a>
-                                                </li>
-                                                <li><a href="add-professor.html">Add User</a>
-                                                </li>
-                                                <li><a href="add-professor.html">Pending</a>
-                                                </li>
+                                                <li><a href="all-professors.html">All Users</a></li>
+                                                <li><a href="pending.php">Pending</a></li>
+                                                </li><a href="add-professor.html">Add User</a></li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#demolibra" href="#">Library Resources <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>

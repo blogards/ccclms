@@ -13,7 +13,7 @@
                             barangay, city,
                             province, postal_code, 
                             status, year_level, 
-                            course, profile_pic 
+                            course, profile_img 
             FROM USERS, BORROWERS 
             WHERE borrowers.id = users.id and borrowers.id = '".$_GET['id']."'";
     $result = mysqli_query($db, $sql);
@@ -34,7 +34,7 @@
             $postal_code  = $row['postal_code'];
             $year_level   = $row['year_level'];
             $course       = $row['course'];
-            $profile_pic  = $row['profile_pic'];
+            $profile_pic  = $row['profile_img'];
         }
     }
     else{

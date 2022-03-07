@@ -1298,7 +1298,7 @@ ul.tab-custon-design li, ul.tab-review-design li {
     left: 0px;
     width: 0%;
     height: 2px;
-    background: #ff8d00;
+    background: #207a00;
     content: "";
 	transition:all .4s ease 0s;
 }
@@ -1308,12 +1308,12 @@ ul.tab-custon-design li, ul.tab-review-design li {
     left: 0px;
     width: 80%;
     height: 2px;
-    background: #ff8d00;
+    background: #207a00;
     content: "";
 	transition:all .4s ease 0s;
 }
 ul.tab-custon-design li.active a, ul.tab-review-design li.active a {
-    color: #ff8d00 !important;
+    color: #207a00 !important;
 }
 ul.tab-custon-design li a, ul.tab-custon-design li a:hover, ul.tab-custon-design li a:focus, ul.tab-review-design li a, ul.tab-review-design li a:hover, ul.tab-review-design li a:focus {
     font-size: 18px;
@@ -2298,8 +2298,8 @@ ul.two-part-sp li{
 	margin-bottom:30px;
 }
 .credit-card-custom a, .waves-light{
-	background:#ff8d00;
-	border-color: #ff8d00;
+	background:#207a00;
+	border-color: #207a00;
 }
 .payment-method-ht i {
     font-size: 50px;
@@ -2311,12 +2311,12 @@ ul.two-part-sp li{
 	text-align:center;
 }
 .payment-adress button{
-	background:#ff8d00;
-	border-color:#ff8d00;
+	background:#207a00;
+	border-color:#207a00;
 }
 .payment-adress button:hover, .payment-adress button:focus, .payment-adress button:active, .payment-adress button:visited, .credit-card-custom a:hover, .credit-card-custom a:focus, .credit-card-custom a:active, .credit-card-custom a:visited, .waves-light:hover, .waves-light:focus, .waves-light:active, .waves-light:visited{
-	background:#ff8d00;
-	border-color:#ff8d00;
+	background:#207a00;
+	border-color:#207a00;
 	outline:none;
 	cursor:pointer;
 }
@@ -2998,7 +2998,7 @@ td.text-right.mail-date {
 	box-shadow:none;
 }
 .form-control:focus {
-    border-color: #ff8d00;
+    border-color: #207a00;
     outline: 0;
     box-shadow: none;
 }
@@ -3371,8 +3371,8 @@ td.text-right.mail-date {
     text-align: left;
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-    background-color: #ff8d00;
-    border-color: #ff8d00;
+    background-color: #207a00;
+    border-color: #207a00;
 }
 .fixed-table-pagination {
     padding: 0px 10px;
@@ -3662,7 +3662,7 @@ div#sparklinehome canvas {
     width: 100% !important;
 }
 .header-top-area {
-    background: #ff8d00;
+    background: #207a00;
 }
 .sidebar-nav .metismenu{
 	background: #fff;
@@ -3735,7 +3735,7 @@ div#sparklinehome canvas {
     background-color: #86bc42;
 }
 .footer-copyright-area {
-    background: #ff8d00;
+    background: #207a00;
 	padding: 20px 0px;
     text-align: center;
 }
@@ -4206,7 +4206,7 @@ div#sparklinehome canvas {
 	height:144px;
 }
 .form-group textarea:focus{
-	border:1px solid #ff8d00;
+	border:1px solid #207a00;
 }
 .add-professors .form-group, .addcoursepro .form-group{
 	margin: 10px 0px;

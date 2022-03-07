@@ -1,5 +1,6 @@
 <?php
     include('config.php');
+  
     require_once(ABSPATH . '/includes/layout/header.php');
     require_once(ABSPATH . '/includes/layout/sidebar.php');
 ?>

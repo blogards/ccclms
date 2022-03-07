@@ -23,9 +23,6 @@ include('../../config.php');
 	$arrayvar	 =  explode('.',$_FILES['profileimg']['name']);
     $file_ext=strtolower(end($arrayvar));
 
-	if(in_array($file_ext,$extensions)=== false){
-		$errors[]="extension not allowed, please choose a JPEG or PNG file.";
-	 }
 	 
 	 if($file_size > 2097152){
 		$errors[]='File size must be excately 2 MB';
@@ -76,7 +73,8 @@ include('../../config.php');
 			
 		}else{
 			$query = "UPDATE users SET 
-								user_type = '".$user_type."' 
+								user_type = '".$user_type."', 
+								profile_img =	'".$file_name."'
 								WHERE id = '$user_id';";
 
 			$query .= "UPDATE borrowers SET first_name	=	'".$firstname."',
@@ -89,8 +87,7 @@ include('../../config.php');
 											province	=	'".$province."',
 											postal_code =	'".$postal_code."', 
 											year_level	=	'".$year_level."', 
-											course		=	'".$course."', 
-											profile_pic =	'".$file_name."' 
+											course		=	'".$course."'  
 											WHERE id='".$user_id."'";
 
 			if(mysqli_multi_query($db, $query)) {
