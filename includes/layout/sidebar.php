@@ -1,7 +1,7 @@
 <?php 
     /** Absolute path to the WordPress directory. */
     if ( ! defined( 'ROOT_PATH' ) ) {
-        define( 'ROOT_PATH', $_SERVER['DOCUMENT_ROOT'] . '/CCCLMS/' );
+        define( 'ROOT_PATH', $_SERVER['DOCUMENT_ROOT'] . '/ccclms/' );
     }
     include_once(ROOT_PATH . '/config.php');
     if (!isset($_SESSION['user']))
@@ -57,13 +57,13 @@
                         </li>
                         
                         <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false">
+                            <a class="has-arrow" href="malbox.html" aria-expanded="false">
                                 <i class="fa fa-exchange icon-wrap" aria-hidden="true"></i>
                                 <span class="mini-click-non">Transaction</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Available Books</span></a></li>
-                                <li><a title="View Mail" href="mailbox-view.html"><span class="mini-sub-pro">Return Books</span></a></li>
+                                <li><a title="Inbox" href="available-books.php"><span class="mini-sub-pro">Available Books</span></a></li>
+                                <li><a title="View Mail" href="return-books.php"><span class="mini-sub-pro">Return Books</span></a></li>
                             </ul>
                         </li>
                         <li class="active">

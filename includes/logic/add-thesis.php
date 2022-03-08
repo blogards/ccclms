@@ -30,13 +30,13 @@ function addThesis() {
         $total = $row + 1;
         $barcode = "THS-" . $total;
         if($results){
-                $query = "INSERT INTO `library-resources` (barcode, category, status) 
-                        VALUES('$barcode', '$category', '$status')";
+                $query = "INSERT INTO `library-resources` (barcode, title, category, status) 
+                        VALUES('$barcode', '$title', '$category', '$status')";
                 $result = mysqli_query($db, $query);
 
                         if($result){
-                                $sql = "INSERT INTO `thesis` (`barcode`, `title`, `author`, `year`) 
-                                        VALUES ('$barcode', '$title', '$author', '$year')";
+                                $sql = "INSERT INTO `thesis` (`barcode`, `author`, `year`) 
+                                        VALUES ('$barcode', '$author', '$year')";
                                 $allresult = mysqli_query($db, $sql);
                                 $_SESSION['success']  = "New data successfully created!!";
                                 header('location: ../../thesis.php');

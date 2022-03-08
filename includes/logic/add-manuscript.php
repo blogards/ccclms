@@ -28,10 +28,10 @@ function addManuscript() {
         $total = $row + 1;
         $barcode = "MNS-" . $total;
         if($results){
-                $query = "INSERT INTO `library-resources` (barcode, category, status) 
-                        VALUES('$barcode', '$category', '$status');";
-                $query .= "INSERT INTO `manuscript` (`barcode`, `title`, `author`, `course`, `year`) 
-                        VALUES ('$barcode', '$title', '$author', '$course', '$year')";
+                $query = "INSERT INTO `library-resources` (barcode, title, category, status) 
+                        VALUES('$barcode', '$title', '$category', '$status');";
+                $query .= "INSERT INTO `manuscript` (`barcode`, `author`, `course`, `year`) 
+                        VALUES ('$barcode', '$author', '$course', '$year')";
                 $result = mysqli_multi_query($db, $query);
                 
                 if($result){
@@ -39,10 +39,10 @@ function addManuscript() {
                         header('location: ../../manuscript.php');
                 } else {
                         $barcode++;
-                        $query = "INSERT INTO `library-resources` (barcode, category, status) 
-                                VALUES('$barcode', '$category', '$status');";
-                        $query .= "INSERT INTO `manuscript` (`barcode`, `title`, `author`, `course`, `year`) 
-                                VALUES ('$barcode', '$title', '$author', '$course', '$year')";
+                        $query = "INSERT INTO `library-resources` (barcode, title, category, status) 
+                                VALUES('$barcode', '$title', '$category', '$status');";
+                        $query .= "INSERT INTO `manuscript` (`barcode`, `author`, `course`, `year`) 
+                                VALUES ('$barcode', '$author', '$course', '$year')";
                         $result = mysqli_multi_query($db, $query);
                         $_SESSION['success']  = "New data successfully created!!";
                         header('location: ../../manuscript.php');

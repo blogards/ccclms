@@ -24,7 +24,10 @@ function editAudioVisual() {
     
 
 
-    $query = "UPDATE `library-resources` SET updated_at='$curtmtmp' WHERE id = '$id'";
+    $query = "UPDATE `library-resources` SET 
+            title      = '$title',
+            updated_at = '$curtmtmp'
+            WHERE id   = '$id'";
     $result = mysqli_query($db, $query);
 
     if($result) {
@@ -34,7 +37,6 @@ function editAudioVisual() {
         $bar_code = $row['barcode'];
         if($results) {
             $sqlquery = "UPDATE `audio-visual` SET 
-                    title           =   '$title',
                     grade_level     =   '$grade_level',
                     subject         =   '$subject',
                     duration        =   '$duration',

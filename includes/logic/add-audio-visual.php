@@ -32,10 +32,10 @@ function add_audio_visual() {
         $total = $row + 1;
         $barcode = "AVM-" . $total;
         if($results){
-                $query = "INSERT INTO `library-resources` (barcode, category, status) 
-                VALUES('$barcode', '$category', '$status');";
-                $query .= "INSERT INTO `audio-visual` (`barcode`, `title`, `grade_level`, `subject`, `duration`, `copyright`, `date_received`) 
-                VALUES ('$barcode', '$title', '$grade_level', '$subject', '$duration', '$copyright', '$date_received')";
+                $query = "INSERT INTO `library-resources` (barcode, `title`, category, status) 
+                VALUES('$barcode', '$title', '$category', '$status');";
+                $query .= "INSERT INTO `audio-visual` (`barcode`, `grade_level`, `subject`, `duration`, `copyright`, `date_received`) 
+                VALUES ('$barcode', '$grade_level', '$subject', '$duration', '$copyright', '$date_received')";
                 $result = mysqli_multi_query($db, $query);
 
                 if($result){
@@ -43,10 +43,10 @@ function add_audio_visual() {
                         header('location: ../../audio-visual.php');
                 } else {
                         $barcode++;
-                        $query = "INSERT INTO `library-resources` (barcode, category, status) 
-                        VALUES('$barcode', '$category', '$status');";
-                        $query .= "INSERT INTO `audio-visual` (`barcode`, `title`, `grade_level`, `subject`, `duration`, `copyright`, `date_received`) 
-                        VALUES ('$barcode', '$title', '$grade_level', '$subject', '$duration', '$copyright', '$date_received')";
+                        $query = "INSERT INTO `library-resources` (barcode, `title`, category, status) 
+                        VALUES('$barcode', '$title', '$category', '$status');";
+                        $query .= "INSERT INTO `audio-visual` (`barcode`, `grade_level`, `subject`, `duration`, `copyright`, `date_received`) 
+                        VALUES ('$barcode', '$grade_level', '$subject', '$duration', '$copyright', '$date_received')";
                         $result = mysqli_multi_query($db, $query);
                         $_SESSION['success']  = "New data successfully created!!";
                         header('location: ../../audio-visual.php');

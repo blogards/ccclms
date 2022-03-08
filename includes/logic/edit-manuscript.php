@@ -22,7 +22,7 @@ function editManuscript() {
 
 
 
-    $query = "UPDATE `library-resources` SET updated_at='$curtmtmp' WHERE id = '$id'";
+    $query = "UPDATE `library-resources` SET title = '$title', updated_at='$curtmtmp' WHERE id = '$id'";
     $result = mysqli_query($db, $query);
 
         if($result){
@@ -32,7 +32,6 @@ function editManuscript() {
             $bar_code = $row['barcode'];
             if($results) {
                 $sql = "UPDATE `manuscript` SET 
-                    title           =   '$title',
                     author          =   '$author',
                     course          =   '$course',
                     `year`          =   '$year',

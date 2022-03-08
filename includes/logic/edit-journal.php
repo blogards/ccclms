@@ -26,7 +26,7 @@ function editJournal() {
     
 
 
-    $query = "UPDATE `library-resources` SET updated_at='$curtmtmp' WHERE id = '$id'";
+    $query = "UPDATE `library-resources` SET title = '$title', updated_at='$curtmtmp' WHERE id = '$id'";
     $result = mysqli_query($db, $query);
 
     if($result) {
@@ -36,7 +36,6 @@ function editJournal() {
         $bar_code = $row['barcode'];
         if($results) {
             $sqlquery = "UPDATE `journals` SET 
-                    title           =   '$title',
                     volume          =   '$volume',
                     copy            =   '$copy',
                     date            =   '$date',

@@ -32,20 +32,20 @@ function addPublication() {
         $total = $row + 1;
         $barcode = "GVP-" . $total;
         if($results){
-                $query = "INSERT INTO `library-resources` (barcode, category, status) 
-                VALUES('$barcode', '$category', '$status');";
-                $query .= "INSERT INTO `publications` (`barcode`, `title`, `volume`, `copy`, `date`, `issn`, `subject`) 
-                VALUES ('$barcode', '$title', '$volume', '$copy', '$date_received', '$issn', '$subject')";
+                $query = "INSERT INTO `library-resources` (barcode, title, category, status) 
+                VALUES('$barcode', '$title', '$category', '$status');";
+                $query .= "INSERT INTO `publications` (`barcode`, `volume`, `copy`, `date`, `issn`, `subject`) 
+                VALUES ('$barcode', '$volume', '$copy', '$date_received', '$issn', '$subject')";
                 $allresult = mysqli_multi_query($db, $query);
                 if($allresult) {
                     $_SESSION['success']  = "New data successfully created!!";
                     header('location: ../../gov-publication.php');
                 }else{
                     $barcode++;
-                    $query = "INSERT INTO `library-resources` (barcode, category, status) 
-                    VALUES('$barcode', '$category', '$status');";
-                    $query .= "INSERT INTO `publications` (`barcode`, `title`, `volume`, `copy`, `date`, `issn`, `subject`) 
-                    VALUES ('$barcode', '$title', '$volume', '$copy', '$date_received', '$issn', '$subject')";
+                    $query = "INSERT INTO `library-resources` (barcode, title, category, status) 
+                    VALUES('$barcode', '$title', '$category', '$status');";
+                    $query .= "INSERT INTO `publications` (`barcode`, `volume`, `copy`, `date`, `issn`, `subject`) 
+                    VALUES ('$barcode', '$volume', '$copy', '$date_received', '$issn', '$subject')";
                     $allresult = mysqli_multi_query($db, $query);
                     $_SESSION['success']  = "New data successfully created!!";
                     header('location: ../../gov-publication.php');

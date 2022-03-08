@@ -21,7 +21,7 @@ function editThesis() {
 
 
 
-    $query = "UPDATE `library-resources` SET updated_at='$curtmtmp' WHERE id = '$id'";
+    $query = "UPDATE `library-resources` SET title = '$title', updated_at='$curtmtmp' WHERE id = '$id'";
     $result = mysqli_query($db, $query);
 
         if($result){
@@ -31,7 +31,6 @@ function editThesis() {
             $bar_code = $row['barcode'];
             if($results) {
                 $sql = "UPDATE `thesis` SET 
-                    title           =   '$title',
                     author          =   '$author',
                     `year`          =   '$year',
                     updated_at      =   '$curtmtmp' 

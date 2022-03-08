@@ -32,7 +32,10 @@ function edit_books() {
     
 
 
-    $query = "UPDATE `library-resources` SET updated_at='$curtmtmp' WHERE id = '$id'";
+    $query = "UPDATE `library-resources` SET
+            title=   '$title',
+            updated_at='$curtmtmp'
+            WHERE id = '$id'";
     $results = mysqli_query($db, $query);
 
     if($results) {
@@ -42,7 +45,7 @@ function edit_books() {
         $bar_code = $row['barcode'];
         if($results) {
             $sql = "UPDATE `books` SET 
-                    title           =   '$title',
+                    
                     edition         =   '$edition',
                     volume          =   '$volume',
                     author          =   '$author',
