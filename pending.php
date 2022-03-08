@@ -4,7 +4,7 @@
     require_once(ABSPATH . 'includes/layout/sidebar.php');
 
     $sql = "SELECT DISTINCT USERS.id, first_name, middle_name, last_name, email, contact, user_type, street, barangay, city, province, postal_code, status, profile_img 
-    FROM USERS, BORROWERS WHERE borrowers.id = users.id and status = 'inactive' order by id";
+    FROM USERS, BORROWERS WHERE borrowers.id = users.id and status = 'Pending' order by id";
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0) {
       
@@ -58,11 +58,7 @@
                                                 <td><?php echo $row["street"]; echo " "; echo $row['barangay']; echo ", "; echo $row['city']; echo " "; echo $row['province']; echo " "; echo $row['postal_code']; ?></td>
                                                 <td><?php echo $row["status"]; ?></td>
                                                 <td>
-                                                    <a href="add-user.php?id=<?php echo $row["id"]; ?>" style="background: #1aff00"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                    <a href="edit-user.php?id=<?php echo $row["id"]; ?>" class="edit" style="background: #00bbff"><i class="fa fa-pencil-square-o update"></i></a>
-                                                    <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row['id']; ?>" data-toggle="modal" style="background: #ff0000">
-                                                        <i class="fa fa-trash-o" aria-hidden="true" data-toggle="tooltip" title="Delete"></i>
-                                                    </a>
+                                                    <a href="includes/logic/update-user-status.php?id=<?php echo $row["id"]; ?>" style="background: #0075db; padding: 5px 10px; border-radius: 5px;">Approve</a>
                                                 </td>
                                             </tr>
                                             <?php

@@ -46,7 +46,7 @@ include('../../config.php');
 
 	if (count($errors) == 0) {
 
-		if (isset($_POST['user_type']) && empty($file_name)) {
+		if (empty($file_name)) {
 			$query = "UPDATE users SET user_type = '".$user_type."' 
 								WHERE id = '$user_id';";
 

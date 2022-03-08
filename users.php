@@ -4,7 +4,7 @@
     require_once(ABSPATH . 'includes/layout/sidebar.php');
 
     $sql = "SELECT DISTINCT USERS.id, first_name, middle_name, last_name, email, contact, user_type, street, barangay, city, province, postal_code, status, profile_img 
-    FROM USERS, BORROWERS WHERE borrowers.id = users.id and status = 'active' order by id";
+    FROM USERS, BORROWERS WHERE borrowers.id = users.id and status = 'Approved' order by id";
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0) {
       
