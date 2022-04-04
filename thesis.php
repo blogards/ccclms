@@ -3,7 +3,7 @@
     require_once(ROOT_PATH . '/includes/layout/header.php');
     require_once(ROOT_PATH . '/includes/layout/sidebar.php');
 
-    $sql = "SELECT `library-resources`.`id`, title, `library-resources`.`barcode`, author, `year` FROM `library-resources`, `thesis` WHERE `library-resources`.`barcode` = `thesis`.`barcode` order by 1";
+    $sql = "SELECT `library-resources`.`id`, `library-resources`.title, `library-resources`.`barcode`, author, `year` FROM `library-resources`, `thesis` WHERE `library-resources`.`barcode` = `thesis`.`barcode` order by 1";
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0) {
  ?>

@@ -76,7 +76,9 @@
                                                 $i++;
                                                     }
                                                 }else{
-                                                    echo "No result found";
+                                                    echo "<tr>";
+                                                    echo "<td>No result found</td>";
+                                                    echo "</tr>";
                                                 }
                                             ?>
                                         </tbody>

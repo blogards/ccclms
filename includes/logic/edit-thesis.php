@@ -31,6 +31,7 @@ function editThesis() {
             $bar_code = $row['barcode'];
             if($results) {
                 $sql = "UPDATE `thesis` SET 
+                    title           =   '$title',
                     author          =   '$author',
                     `year`          =   '$year',
                     updated_at      =   '$curtmtmp' 

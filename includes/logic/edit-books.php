@@ -45,7 +45,7 @@ function edit_books() {
         $bar_code = $row['barcode'];
         if($results) {
             $sql = "UPDATE `books` SET 
-                    
+                    title           =   '$title',
                     edition         =   '$edition',
                     volume          =   '$volume',
                     author          =   '$author',

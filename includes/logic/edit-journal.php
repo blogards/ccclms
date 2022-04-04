@@ -36,6 +36,7 @@ function editJournal() {
         $bar_code = $row['barcode'];
         if($results) {
             $sqlquery = "UPDATE `journals` SET 
+                    title           =   '$title',
                     volume          =   '$volume',
                     copy            =   '$copy',
                     date            =   '$date',

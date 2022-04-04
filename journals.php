@@ -3,9 +3,9 @@
     require_once(ROOT_PATH . '/includes/layout/header.php');
     require_once(ROOT_PATH . '/includes/layout/sidebar.php');
 
-    $sql = "SELECT `library-resources`.`id`, title, `library-resources`.`barcode`, volume, copy, date, issn, subject FROM `library-resources`, `journals` WHERE `library-resources`.`barcode` = `journals`.`barcode` order by 1";
+    $sql = "SELECT `library-resources`.`id`, `library-resources`.title, `library-resources`.`barcode`, volume, copy, date, issn, subject FROM `library-resources`, `journals` WHERE `library-resources`.`barcode` = `journals`.`barcode` order by 1";
     $result = mysqli_query($db, $sql);
-    if (mysqli_num_rows($result) > 0) {
+    
  ?>
     <div class="data-table-area mg-b-15">
             <div class="container-fluid">
@@ -47,6 +47,7 @@
                                         </thead>
                                         <tbody>
                                             <?php
+                                              if (mysqli_num_rows($result) > 0) {
                                               $i=0;
                                               while($row = mysqli_fetch_array($result)) {
                                             ?>
@@ -62,35 +63,36 @@
                                                 <td><?php echo $row["subject"]; ?></td>
                                                 <td>
                                                   <div style="display: flex;">
-                                                  <a class="media" href="" style="background: #1aff00"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                  <a href="#" data-toggle="modal" data-target="#PrimaryModalalert2" style="background: #00bbff">
-                                                    <i class="fa fa-pencil-square-o updateJournal" 
-                                                      data-id="<?php echo $row["id"]; ?>"
-                                                      data-barcode="<?php echo $row['barcode']; ?>"
-                                                      data-title="<?php echo $row["title"]; ?>"
-                                                      data-volume="<?php echo $row["volume"]; ?>"
-                                                      data-copy="<?php echo $row["copy"]; ?>"
-                                                      data-date_received="<?php echo $row["date"]; ?>"
-                                                      data-issn="<?php echo $row["issn"]; ?>"
-                                                      data-subject="<?php echo $row["subject"]; ?>">
-                                                    </i>
-                                                  </a>
-                                                  <a href="#" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
-                                                    <i class="fa fa-trash-o deleteJournal" 
-                                                      data-jl_barcode="<?php echo $row["barcode"]; ?>"
-                                                      data-jl_title="<?php echo $row["title"]; ?>">
-                                                    </i>
-                                                  </a>
+                                                    <a class="media" href="" style="background: #1aff00"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#PrimaryModalalert2" style="background: #00bbff">
+                                                      <i class="fa fa-pencil-square-o updateJournal" 
+                                                        data-id="<?php echo $row["id"]; ?>"
+                                                        data-barcode="<?php echo $row['barcode']; ?>"
+                                                        data-title="<?php echo $row["title"]; ?>"
+                                                        data-volume="<?php echo $row["volume"]; ?>"
+                                                        data-copy="<?php echo $row["copy"]; ?>"
+                                                        data-date_received="<?php echo $row["date"]; ?>"
+                                                        data-issn="<?php echo $row["issn"]; ?>"
+                                                        data-subject="<?php echo $row["subject"]; ?>">
+                                                      </i>
+                                                    </a>
+                                                    <a href="#" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
+                                                      <i class="fa fa-trash-o deleteJournal" 
+                                                        data-jl_barcode="<?php echo $row["barcode"]; ?>"
+                                                        data-jl_title="<?php echo $row["title"]; ?>">
+                                                      </i>
+                                                    </a>
                                                   </div>
                                                 </td>
                                             </tr>
-                                            <?php
-                                                $i++;
-                                                    }
-                                                }else{
-                                                    echo "No result found";
-                                                }
-                                            ?>
+                                      <?php
+                                        $i++;
+                                          }
+                                            }else{ ?>
+                                            <tr>
+                                              <td colspan="9">No result found</td>
+                                            </tr>
+                                      <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>

@@ -3,7 +3,7 @@
     require_once(ROOT_PATH . '/includes/layout/header.php');
     require_once(ROOT_PATH . '/includes/layout/sidebar.php');
 
-    $sql = "SELECT `library-resources`.`id`, title, `library-resources`.`barcode`, edition, volume, author, publisher, class, pages, remarks, date_received, year, cash_price, sof FROM `library-resources`, books WHERE `library-resources`.`barcode` = books.barcode order by 1";
+    $sql = "SELECT `library-resources`.`id`, `library-resources`.title, `library-resources`.`barcode`, edition, volume, author, publisher, class, pages, remarks, date_received, year, cash_price, sof FROM `library-resources`, books WHERE `library-resources`.`barcode` = books.barcode order by 1";
     $result = mysqli_query($db, $sql);
     if (mysqli_num_rows($result) > 0) {
  ?>
@@ -106,7 +106,7 @@
                                                 $i++;
                                                     }
                                                 }else{
-                                                    echo "No result found";
+                                                    echo "<td colspan='15'>No result</td>";
                                                 }
                                             ?>
                                         </tbody>

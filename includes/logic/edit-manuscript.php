@@ -32,6 +32,7 @@ function editManuscript() {
             $bar_code = $row['barcode'];
             if($results) {
                 $sql = "UPDATE `manuscript` SET 
+                    title           =   '$title',
                     author          =   '$author',
                     course          =   '$course',
                     `year`          =   '$year',

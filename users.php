@@ -28,6 +28,13 @@
                                           <option value="selected">Export Selected</option>
                                         </select>
                                     </div>
+                                    <div class="col-md-2 school-year" id="toolbar">
+                                        <select class="form-control dt-tb">
+                                          <option value="">Export Basic</option>
+                                          <option value="all">Export All</option>
+                                          <option value="selected">Export Selected</option>
+                                        </select>
+                                    </div>
                                     <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
                                         data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                         <thead>

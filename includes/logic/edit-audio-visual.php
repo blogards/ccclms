@@ -37,6 +37,7 @@ function editAudioVisual() {
         $bar_code = $row['barcode'];
         if($results) {
             $sqlquery = "UPDATE `audio-visual` SET 
+                    title           =   '$title',
                     grade_level     =   '$grade_level',
                     subject         =   '$subject',
                     duration        =   '$duration',
