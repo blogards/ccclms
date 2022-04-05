@@ -54,7 +54,7 @@ require_once(ROOT_PATH . "/includes/layout/header.php");
                 </div>
 			</div>
 			<div class="text-center login-footer">
-				<p>Copyright © 2018. All rights reserved. Hosted by MVSoftech Inc.</p>
+				<p>Copyright © 2022. All rights reserved. Hosted by MVSoftech Inc.</p>
 			</div>
 		</div>   
     </div>
