@@ -4,20 +4,24 @@ require_once(ROOT_PATH . "/includes/layout/header.php");
 ?>
 <div class="error-pagewrap">
 		<div class="error-page-int">
-			<div class="text-center custom-login">
-				<h3>Create Library Account</h3>
-			</div>
 			<div class="content-error">
 				<div class="hpanel">
                     <div class="panel-body">
+                        <div class="text-center m-b-md custom-login">
+                          <img src="img/CCC-logo.png" height="150" width="150"/>
+                        </div><br/>
+                        <div class="text-center custom-login">
+                          <h3>Create Library Account</h3>
+                        </div><br/>
                         <form method="post" action="register.php">
+
                           <?php echo display_error(); ?>
                             <div class="row">
-                                <div class="form-group col-lg-12">
+                                <div class="form-group col-lg-6">
                                     <label>First Name</label>
                                     <input class="form-control" type="text" name="firstname" id="firstname" required/>
                                 </div>
-                                <div class="form-group col-lg-12">
+                                <div class="form-group col-lg-6">
                                     <label>Middle Name</label>
                                     <input class="form-control" type="text" name="middlename" id="middlename">
                                 </div>
@@ -40,9 +44,6 @@ require_once(ROOT_PATH . "/includes/layout/header.php");
                                 <div class="form-group col-lg-6">
                                     <label>Repeat Password</label>
                                     <input type="password" name="password_2" class="form-control" required>
-                                </div>
-                                <div class="checkbox col-lg-12">
-                                    <input type="checkbox" class="i-checks" checked> Sigh up for our newsletter
                                 </div>
                             </div>
                             <div class="text-center">
