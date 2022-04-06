@@ -137,40 +137,40 @@
                                             </div>
                                             <div class="form-group">
                                               <label >Edition</label>
-                                              <input name="edition" type="text" class="form-control" placeholder="Edition" required>
+                                              <input name="edition" type="text" class="form-control" placeholder="Edition">
                                             </div>
                                             <div class="form-group">
                                               <label >Volume</label>
-                                              <input name="volume" type="text" class="form-control" placeholder="Volume" required>
+                                              <input name="volume" type="text" class="form-control" placeholder="Volume">
                                             </div>
                                             <div class="form-group">
                                               <label >Author</label>
-                                              <input name="author" type="text" class="form-control" placeholder="Author" required>
+                                              <input name="author" type="text" class="form-control" placeholder="Author">
                                             </div>
                                             <div class="form-group">
                                               <label >Publisher</label>
-                                              <input name="publisher" type="text" class="form-control" placeholder="Publisher" required>
+                                              <input name="publisher" type="text" class="form-control" placeholder="Publisher" >
                                             </div>
                                             <div class="form-group">
                                               <label >Class</label>
-                                              <input name="class" type="text" class="form-control" placeholder="Class" required>
+                                              <input name="class" type="text" class="form-control" placeholder="Class" >
                                             </div>
                                         </div>
                                         <div class="col-lg-6 cold-md-6 col-sm12 col-xs-12">
                                             <div class="form-group">
                                               <label >Pages</label>
-                                              <input name="pages" type="number" class="form-control" placeholder="Pages" required>
+                                              <input name="pages" type="number" class="form-control" placeholder="Pages" >
                                             </div>
                                             <div class="form-group" id="data_3">
                                                 <label>Date Received</label>
                                                 <div class="input-group date">
                                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                    <input type="text" name="date_received" class="form-control" value="" required>
+                                                    <input type="text" name="date_received" class="form-control" value="" >
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                               <label >Year</label>
-                                              <input name="year" type="text" class="form-control" placeholder="Year" required>
+                                              <input name="year" type="text" class="form-control" placeholder="Year">
                                             </div>
                                             <div class="form-group">
                                               <label >Cash Price</label>

@@ -37,10 +37,10 @@ function add_books() {
         $total = $row + 1;
         $barcode = "BKS-" . $total;
         if($results){
-            $query = "INSERT INTO `library-resources` (barcode, title, category, status, created_at, updated_at) 
-                    VALUES('$barcode', '$category', '$status', '$curtmtmp', '$curtmtmp');";
-            $query .= "INSERT INTO books (barcode, edition, volume, author, publisher, class, pages, remarks, date_received, `year`, cash_price, sof, created_at, updated_at) 
-                    VALUES ('$barcode', '$edition', '$volume', '$author', '$publisher', '$class', '$pages', '$remarks', '$date_received', '$year', '$cash_price', '$sof', '$curtmtmp', '$curtmtmp')";
+            $query = "INSERT INTO `library-resources` (barcode, title, category, status) 
+                    VALUES('$barcode', '$title', '$category', '$status');";
+            $query .= "INSERT INTO books (barcode, title, edition, volume, author, publisher, class, pages, remarks, date_received, `year`, cash_price, sof) 
+                    VALUES ('$barcode', '$title', '$edition', '$volume', '$author', '$publisher', '$class', '$pages', '$remarks', '$date_received', '$year', '$cash_price', '$sof')";
             $result = mysqli_multi_query($db, $query);
 
             if($result){
@@ -48,10 +48,10 @@ function add_books() {
                 header('location: ../../books.php');
             } else {
                 $barcode++;
-                $query = "INSERT INTO `library-resources` (barcode, title, category, status, created_at, updated_at) 
-                        VALUES('$barcode', '$category', '$status', '$curtmtmp', '$curtmtmp');";
-                $query .= "INSERT INTO books (barcode, edition, volume, author, publisher, class, pages, remarks, date_received, `year`, cash_price, sof, created_at, updated_at) 
-                        VALUES ('$barcode', '$edition', '$volume', '$author', '$publisher', '$class', '$pages', '$remarks', '$date_received', '$year', '$cash_price', '$sof', '$curtmtmp', '$curtmtmp')";
+                $query = "INSERT INTO `library-resources` (barcode, title, category, status) 
+                        VALUES('$barcode', '$title', '$category', '$status');";
+                $query .= "INSERT INTO books (barcode, title, edition, volume, author, publisher, class, pages, remarks, date_received, `year`, cash_price, sof, created_at, updated_at) 
+                        VALUES ('$barcode', '$title', '$edition', '$volume', '$author', '$publisher', '$class', '$pages', '$remarks', '$date_received', '$year', '$cash_price', '$sof', '$curtmtmp', '$curtmtmp')";
                 $result = mysqli_multi_query($db, $query);
                 $_SESSION['success']  = "New data successfully created!!";
                 header('location: ../../books.php');

@@ -21,26 +21,33 @@
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
+
+                        <!-- Dashboard Section start -->
                         <li class="active">
                             <a title="Landing Page" href="dashboard.php" aria-expanded="false">
                                 <span class="fa fa-tachometer icon-wrap" aria-hidden="true"></span>
                                 <span class="mini-click-non">Dashboard</span>
                             </a>
                         </li>
+                        <!-- Dashboard Section end -->
                         
+                        <!-- Transaction Section start -->
                         <li>
-                            
-                            <a class="has-arrow" href="all-students.html" aria-expanded="false">
-                                <i class="fa fa-user icon-wrap" aria-hidden="true"></i>
-                                <span class="mini-click-non">Users</span>
+                            <a class="has-arrow" href="malbox.html" aria-expanded="false">
+                                <i class="fa fa-exchange icon-wrap" aria-hidden="true"></i>
+                                <span class="mini-click-non">Transaction</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Students" href="users.php"><span class="mini-sub-pro">All Users</span></a></li>
-                                <li><a title="Add Students" href="pending.php"><span class="mini-sub-pro">Pending</span></a></li>
-                                <li><a title="Add Students" href="add-user.php"><span class="mini-sub-pro">Add User</span></a></li>
+                                <li><a title="Inbox" href="available-books.php"><span class="mini-sub-pro">Available Books</span></a></li>
+                                <li><a title="View Mail" href="pending-reservation.php"><span class="mini-sub-pro">Pending</span></a></li>
+                                <li><a title="View Mail" href="to-release.php"><span class="mini-sub-pro">To Release</span></a></li>
+                                <li><a title="View Mail" href="borrowed.php"><span class="mini-sub-pro">Borrowed</span></a></li>
+                                <li><a title="View Mail" href="returned.php"><span class="mini-sub-pro">Returned</span></a></li>
                             </ul>
                         </li>
-                        <!-- Library Assets Section -->
+                        <!-- Library Assets Section end -->
+
+                        <!-- Library Assets Section start -->
                         <li>
                             <a class="has-arrow" href="all-courses.html" aria-expanded="false">
                                 <i class="fa fa-book icon-wrap" aria-hidden="true"></i>
@@ -55,17 +62,22 @@
                                 <li><a title="Add Library" href="journals.php"><span class="mini-sub-pro">Journals</span></a></li>
                             </ul>
                         </li>
-                        
+                        <!-- Library Assets Section end -->
+
+                        <!-- Users Section start -->
                         <li>
-                            <a class="has-arrow" href="malbox.html" aria-expanded="false">
-                                <i class="fa fa-exchange icon-wrap" aria-hidden="true"></i>
-                                <span class="mini-click-non">Transaction</span>
+                            <a class="has-arrow" href="all-students.html" aria-expanded="false">
+                                <i class="fa fa-user icon-wrap" aria-hidden="true"></i>
+                                <span class="mini-click-non">Users</span>
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Inbox" href="available-books.php"><span class="mini-sub-pro">Available Books</span></a></li>
-                                <li><a title="View Mail" href="return-books.php"><span class="mini-sub-pro">Return Books</span></a></li>
+                                <li><a title="All Students" href="users.php"><span class="mini-sub-pro">All Users</span></a></li>
+                                <li><a title="Add Students" href="pending.php"><span class="mini-sub-pro">Pending</span></a></li>
+                                <li><a title="Add Students" href="add-user.php"><span class="mini-sub-pro">Add User</span></a></li>
                             </ul>
                         </li>
+                        <!-- Users Section end -->
+                        
                         <li class="active">
                             <a title="Landing Page" href="calendar.php" aria-expanded="false">
                                 <i class="fa fa-calendar icon-wrap" aria-hidden="true"></i>
@@ -256,10 +268,11 @@
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#demodepart" href="#">Transactions <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                             <ul id="demodepart" class="collapse dropdown-header-top">
-                                                <li><a href="departments.html">Available</a>
-                                                </li>
-                                                <li><a href="add-department.html">Deployed</a>
-                                                </li>
+                                                <li><a href="available-books.php">Available</a></li>
+                                                <li><a href="pending-reservation.php">Pending</a></li>
+                                                <li><a href="to-release.php">To Release</a></li>
+                                                <li><a href="borrowed.php">Borrowed</a></li>
+                                                <li><a href="returned.php">Returned</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="calendar.php">Calendar</a></li>
