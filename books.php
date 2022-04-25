@@ -159,7 +159,7 @@
                                               <label >Pages</label>
                                               <input name="pages" type="number" class="form-control" placeholder="Pages" >
                                             </div>
-                                            <div class="form-group" id="data_3">
+                                            <div class="form-group" id="date">
                                                 <label>Date Received</label>
                                                 <div class="input-group date">
                                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>

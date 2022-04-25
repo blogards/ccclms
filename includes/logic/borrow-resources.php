@@ -23,9 +23,14 @@ function borrow() {
 
     $results = mysqli_query($db, $sql);
     if ($results) {
+        $query = "UPDATE `library-resources` SET `status`='$status', updated_at='$curtmtmp' WHERE barcode = '$resources' ";
+        $result = mysqli_query($db, $query);
+        if ($result) {
         echo "<script type=\"text/javascript\">
-                alert(\"CSV File has been successfully Imported.\");
-                window.location = \"../../available-books.php\"
-                </script>";
+            alert(\"CSV File has been successfully Imported.\");
+            window.location = \"../../available-books.php\"
+            </script>";
+        }
+    
     }
 }

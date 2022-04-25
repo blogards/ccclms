@@ -43,5 +43,11 @@
 		forceParse: false,
 		autoclose: true
 	});
+	
+	$( "#datepicker" ).datepicker({ 
+		minDate: 0, 
+		maxDate: "+2D" 
+	});
+	
 
 })(jQuery);

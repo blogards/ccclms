@@ -3,7 +3,7 @@
     require_once(ROOT_PATH . '/includes/layout/header.php');
     require_once(ROOT_PATH . '/includes/layout/sidebar.php');
 
-    $sql = "select COUNT(title) as 'total', title, category FROM `library-resources` where status = 'Available' GROUP BY title, category order by 3";
+    $sql = "select COUNT(title) as 'total', title, category FROM `library-resources` where status = 'Available' GROUP BY title, category, status order by 3";
     $result = mysqli_query($db, $sql);
  ?>
     <div class="data-table-area mg-b-15">
@@ -122,18 +122,30 @@
                                             </div>
                                             <div class="form-group">
                                             <?php
-                                                $lsql = "SELECT * FROM `library-resources` GROUP by title, category;";
+                                                $lsql = "SELECT * FROM `library-resources` where status = 'Available'  order by barcode desc;";
                                                 $results = $db->query($lsql);
                                             ?>
                                               <label >Resources Name</label>
+                                              <?php  ?>
+                                              
                                               <select class="select2 form-control" data-rel="chosen" style="width: 100%;"  name="resources" id="selectError">
                                                 <option disabled selected>-- Search Library Resources Name --</option>
                                                     <?php 
                                                         while ($row = $results->fetch_assoc()) {
-                                                            echo "<option value=". $row['barcode'] .">".$row["title"]." (".$row["category"].") "."</option>";
+                                                            $category = $row["category"];
+                                                            $title = $row["title"];
+                                                            echo "<option value=". $row['barcode'] .">".$row["title"]." (".$row["category"].$row['barcode'].") "."</option>";
                                                         }
+                                                        
                                                     ?>
                                               </select>
+                                            </div>
+                                            <div class="form-group" id="data_3">
+                                                <label>Date Received</label>
+                                                <div class="input-group date">
+                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                    <input type="text" name="date_received" class="form-control" value="" >
+                                                </div>
                                             </div>
                                         </div>
                                       </div>

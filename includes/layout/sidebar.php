@@ -11,6 +11,7 @@
     } 
     
 ?>
+
     <!-- Start Left menu area -->
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
@@ -294,3 +295,4 @@
             </div>
             <!-- Mobile Menu end -->
         </div>
+        
