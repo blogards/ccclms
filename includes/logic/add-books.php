@@ -31,7 +31,7 @@ function add_books() {
     $remarks        =  $_POST['remarks'];
     
 
-    $sqlquery = "SELECT * FROM `books`";
+        $sqlquery = "SELECT * FROM `books`";
         $results = mysqli_query($db, $sqlquery);
         $row = mysqli_num_rows($results);
         $total = $row + 1;

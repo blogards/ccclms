@@ -5,7 +5,6 @@
 
     $sql = "SELECT `library-resources`.`id`, `library-resources`.title, `library-resources`.`barcode`, edition, volume, author, publisher, class, pages, remarks, date_received, year, cash_price, sof FROM `library-resources`, books WHERE `library-resources`.`barcode` = books.barcode order by 1";
     $result = mysqli_query($db, $sql);
-    if (mysqli_num_rows($result) > 0) {
  ?>
     <div class="data-table-area mg-b-15">
             <div class="container-fluid">
@@ -14,10 +13,11 @@
                         <div class="sparkline13-list">
                             <div class="sparkline13-hd">
                                 <div class="main-sparkline13-hd">
-                                    <div class="col-lg-11 col-md-10 col-sm-11 col-xs-12">
+                                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                         <h1>Books</h1>
                                     </div>
-                                    <a class="Primary mg-b-10 btn btn-custon-rounded-two btn-success" href="#" data-toggle="modal" data-target="#PrimaryModalalert"><i class="fa fa-plus edu-plus-pro" aria-hidden="true"></i> Add New</a>
+                                    <a class="Primary mg-t-10 mg-b-10 btn btn-custon-rounded-two btn-success" href="#" data-toggle="modal" data-target="#PrimaryModalalertedit"><i class="fa fa-plus edu-plus-pro" aria-hidden="true"></i> Import</a>
+                                    <a class="Primary mg-t-10 mg-b-10 btn btn-custon-rounded-two btn-success" href="#" data-toggle="modal" data-target="#PrimaryModalalert"><i class="fa fa-plus edu-plus-pro" aria-hidden="true"></i> Add New</a>
                                 </div>
                             </div>
                             <div class="sparkline13-graph">
@@ -34,14 +34,13 @@
                                         <thead>
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
-                                                <th data-field="id">ID</th>
+                                                <th data-field="class">Class Number</th>
                                                 <th data-field="barcode">Barcode</th>
                                                 <th data-field="title">Title</th>
                                                 <th data-field="edition">Edition</th>
                                                 <th data-field="volume">Volume</th>
                                                 <th data-field="Author">Author</th>
                                                 <th data-field="publisher">Publisher</th>
-                                                <th data-field="class">Class</th>
                                                 <th data-field="pages">Pages</th>
                                                 <th data-field="date-receive">Date Received</th>
                                                 <th data-field="year">Year</th>
@@ -53,19 +52,19 @@
                                         </thead>
                                         <tbody>
                                             <?php
+                                              if (mysqli_num_rows($result) > 0) {
                                               $i=0;
                                               while($row = mysqli_fetch_array($result)) {
                                             ?>
                                             <tr>
                                                 <td></td>
-                                                <td><?php echo $row["id"]; ?></td>
+                                                <td><?php echo $row["class"]; ?></td>
                                                 <td><?php echo $row["barcode"]; ?></td>
                                                 <td><?php echo $row["title"]; ?></td>
                                                 <td><?php echo $row["edition"]; ?></td>
                                                 <td><?php echo $row["volume"]; ?></td>
                                                 <td><?php echo $row["author"]; ?></td>
                                                 <td><?php echo $row["publisher"]; ?></td>
-                                                <td><?php echo $row["class"]; ?></td>
                                                 <td><?php echo $row["pages"]; ?></td>
                                                 <td><?php echo $row["date_received"]; ?></td>
                                                 <td><?php echo $row["year"]; ?></td>
@@ -77,7 +76,6 @@
                                                   <a class="media" href="" style="background: #1aff00"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                   <a href="#" data-toggle="modal" data-target="#PrimaryModalalert2" style="background: #00bbff">
                                                     <i class="fa fa-pencil-square-o editBook" 
-                                                      data-id="<?php echo $row["id"]; ?>"
                                                       data-barcode="<?php echo $row['barcode']; ?>"
                                                       data-title="<?php echo $row["title"]; ?>"
                                                       data-edition="<?php echo $row["edition"]; ?>"
@@ -93,7 +91,7 @@
                                                       data-remarks="<?php echo $row["remarks"]; ?>">
                                                     </i>
                                                   </a>
-                                                  <a href="#" data-toggle="modal" data-target="#DangerModalhdbgcl" style="background: #ff0000">
+                                                  <a href="#" data-toggle="modal" data-target="#deletemodal" style="background: #ff0000">
                                                     <i class="fa fa-trash-o deleteBook" 
                                                       data-db_barcode="<?php echo $row["barcode"]; ?>"
                                                       data-db_title="<?php echo $row["title"]; ?>">
@@ -282,8 +280,41 @@
                             </div>
                       </div>
                     <!-- edit modal Section end -->
+
+                    <!-- Import modal section start-->
+                    <div id="PrimaryModalalertedit" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-close-area modal-close-df">
+                              <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                          </div>
+                          <div class="modal-header header-color-modal bg-color-3">
+                              <h4 class="modal-title">Import data from CSV</h4>
+                              <div class="modal-close-area modal-close-df">
+                                  <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                              </div>
+                          </div>
+                          <form id="update_form" method="post" name="userform" enctype="multipart/form-data" action="includes/logic/import-books.php">
+                          <div class="modal-body">
+                            <div class="col-lg-12 cold-md-12 col-sm12 col-xs-12">
+                                <div class="form-group">
+                                  <label >Select CSV File</label>
+                                  <input name="file" type="file" class="form-control" required>
+                                </div>
+                            </div>   
+                            <div class="modal-footer">
+                                <button class="Primary btn btn-custon-rounded-two btn-danger" data-dismiss="modal" href="#">Cancel</button>
+                                <button class="Primary mg-b-10 btn btn-custon-rounded-two btn-success" type="submit" href="#" name="import_books_btn">Proceed</a>
+                            </div>
+                          </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Import modal section start-->
+
                     <!-- Delete modal Section Start -->
-                      <div id="DangerModalhdbgcl" class="modal modal-edu-general FullColor-popup-DangerModal fade" role="dialog">
+                      <div id="deletemodal" class="modal modal-edu-general FullColor-popup-DangerModal fade" role="dialog">
                           <div class="modal-dialog">
                               <div class="modal-content">
                                   <div class="modal-header header-color-modal bg-color-4">

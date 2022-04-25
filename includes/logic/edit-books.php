@@ -16,7 +16,8 @@ if (isset($_POST['edit_books_btn'])) {
 function edit_books() {
 	// call these variables with the global keyword to make them available in function
 	global $db, $errors, $username, $email, $curdate, $curtmtmp, $category, $status;
-    $id             =  $_POST['id'];
+    //$id             =  $_POST['id'];
+    $barcode        =  $_POST['barcode'];
 	$title          =  $_POST['title'];
 	$edition        =  $_POST['edition'];
 	$volume         =  $_POST['volume'];
@@ -35,7 +36,7 @@ function edit_books() {
     $query = "UPDATE `library-resources` SET
             title=   '$title',
             updated_at='$curtmtmp'
-            WHERE id = '$id'";
+            WHERE barcode = '$barcode'";
     $results = mysqli_query($db, $query);
 
     if($results) {

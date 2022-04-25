@@ -39,7 +39,7 @@
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Inbox" href="available-books.php"><span class="mini-sub-pro">Available Books</span></a></li>
-                                <li><a title="View Mail" href="pending-reservation.php"><span class="mini-sub-pro">Pending</span></a></li>
+                              <!--  <li><a title="View Mail" href="pending-reservation.php"><span class="mini-sub-pro">Pending</span></a></li> -->
                                 <li><a title="View Mail" href="to-release.php"><span class="mini-sub-pro">To Release</span></a></li>
                                 <li><a title="View Mail" href="borrowed.php"><span class="mini-sub-pro">Borrowed</span></a></li>
                                 <li><a title="View Mail" href="returned.php"><span class="mini-sub-pro">Returned</span></a></li>
@@ -72,7 +72,6 @@
                             </a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="All Students" href="users.php"><span class="mini-sub-pro">All Users</span></a></li>
-                                <li><a title="Add Students" href="pending.php"><span class="mini-sub-pro">Pending</span></a></li>
                                 <li><a title="Add Students" href="add-user.php"><span class="mini-sub-pro">Add User</span></a></li>
                             </ul>
                         </li>
@@ -246,7 +245,6 @@
                                         <li><a data-toggle="collapse" data-target="#demoevent" href="#">Users <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                             <ul id="demoevent" class="collapse dropdown-header-top">
                                                 <li><a href="all-professors.html">All Users</a></li>
-                                                <li><a href="pending.php">Pending</a></li>
                                                 </li><a href="add-professor.html">Add User</a></li>
                                             </ul>
                                         </li>
@@ -269,7 +267,7 @@
                                         <li><a data-toggle="collapse" data-target="#demodepart" href="#">Transactions <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                             <ul id="demodepart" class="collapse dropdown-header-top">
                                                 <li><a href="available-books.php">Available</a></li>
-                                                <li><a href="pending-reservation.php">Pending</a></li>
+                                               <!-- <li><a href="pending-reservation.php">Pending</a></li> -->
                                                 <li><a href="to-release.php">To Release</a></li>
                                                 <li><a href="borrowed.php">Borrowed</a></li>
                                                 <li><a href="returned.php">Returned</a></li>
