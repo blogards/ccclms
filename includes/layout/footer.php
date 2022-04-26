@@ -100,6 +100,7 @@
 		============================================ -->
     <script src="js/datapicker/bootstrap-datepicker.js"></script>
     <script src="js/datapicker/datepicker-active.js"></script>
+    <script src="js/datapicker/datepickerwithlimit.js"></script>
     <!-- ajax JS
 		============================================ -->
     <script src="js/ajax.js"></script>

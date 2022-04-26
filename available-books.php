@@ -140,13 +140,14 @@
                                                     ?>
                                               </select>
                                             </div>
-                                            <div class="form-group" id="data_3">
-                                                <label>Date Received</label>
+                                            <!-- <div class="form-group" id="data_6">
+                                                <label>Date to pickup</label>
                                                 <div class="input-group date">
                                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                     <input type="text" name="date_received" class="form-control" value="" >
                                                 </div>
-                                            </div>
+                                            </div> -->
+                                            <p>Select Date: <input type="text" id="datepicker"></p>
                                         </div>
                                       </div>
                                       <div class="modal-footer">
