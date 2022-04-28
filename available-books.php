@@ -122,7 +122,7 @@
                                             </div>
                                             <div class="form-group">
                                             <?php
-                                                $lsql = "SELECT * FROM `library-resources` where status = 'Available'  order by barcode desc;";
+                                                $lsql = "select COUNT(title) as 'total', title, barcode, category FROM `library-resources` where status = 'Available' GROUP BY title, category, status order by 3";
                                                 $results = $db->query($lsql);
                                             ?>
                                               <label >Resources Name</label>

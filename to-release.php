@@ -4,7 +4,7 @@
     require_once(ROOT_PATH . '/includes/layout/sidebar.php');
     $sql = "SELECT borrower_id, resources_id, reservation_date, transaction.status as 'status', first_name, middle_name, last_name, title, barcode
             FROM transaction, borrowers, `library-resources`
-            WHERE transaction.borrower_id = borrowers.id and transaction.resources_id = `library-resources`.`barcode`";
+            WHERE transaction.borrower_id = borrowers.id and transaction.resources_id = `library-resources`.`barcode` and transaction.status = 'For Pickup'";
     $result = mysqli_query($db, $sql);
 ?>
 
@@ -22,8 +22,8 @@
                             </div>
                             <div class="sparkline13-graph">
                                 <div class="datatable-dashv1-list custom-datatable-overright">
-                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
-                                        data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="false" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                        data-cookie-id-table="saveId" data-show-export="false" data-click-to-select="true" data-toolbar="#toolbar">
                                         <thead>
                                             <tr>
                                                 <th data-field="barcode">Barcode</th>
@@ -31,6 +31,7 @@
                                                 <th data-field="qty">Borrower</th>
                                                 <th data-field="author">Date Borrowed</th>
                                                 <th data-field="type">Status</th>
+                                                <th data-field="">Action</th>
                                                 
                                             </tr>
                                         </thead>
@@ -46,6 +47,7 @@
                                                 <td><?php echo $row["first_name"] . " " . $row["middle_name"] . " " . $row["last_name"] ; ?></td>
                                                 <td><?php echo $row["reservation_date"]; ?></td>
                                                 <td><?php echo $row["status"]; ?></td>
+                                                <td></td>
                                                 
                                             </tr>
                                             <?php

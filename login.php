@@ -28,12 +28,17 @@
                             
                             <button class="btn btn-success btn-block loginbtn" type="submit" name="login_btn">Login</button>
                             <button class="btn btn-success btn-block" onclick="location.href='register.php'">Register</button>
+                            <br />
+                            <div class="d-flex" style="display:flex;">
+                              <hr style="width:50%;"/><p style="margin:0 10px;">or</p><hr style="width:50%;"/>
+                            </div><br/>
+                            <button class="btn btn-success btn-block loginbtn" type="submit" name="guest_btn" style="background-color: #6d6d6d; border-style: none; border: 1px solid #6d6d6d">Login as a Guest</button>
                         </form>
                     </div>
                 </div>
 			</div>
 			<div class="text-center login-footer">
-				<p>Copyright © 2022. All rights reserved. Hosted by MVSoftech Inc.</a></p>
+				<p>Copyright © 2022. All rights reserved. Hosted by <a href="https://mvsoftech.ph/" target="_blank">MVSoftech Inc</a>.</p>
 			</div>
 		</div>   
     </div>
