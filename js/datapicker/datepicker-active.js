@@ -44,10 +44,28 @@
 		autoclose: true
 	});
 	
-	$( "#datepicker" ).datepicker({ 
+	$( "" ).datepicker({ 
+		startView: 2,
+		todayBtn: "linked",
+		keyboardNavigation: false,
+		forceParse: false,
+		autoclose: true,
 		minDate: 0, 
 		maxDate: "+2D" 
 	});
+
+	$('').datepicker({
+	todayBtn: "linked",
+	dateFormat: "yy-mm-dd",
+	maxDate:'+3d',
+	minDate: 0
 	
+	});
+
+	$('').datepicker({
+		dateFormat: "yy-mm-dd",
+		minDate: new Date('2022-04-25')
+	   });
+	  
 
 })(jQuery);
