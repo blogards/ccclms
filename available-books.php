@@ -128,7 +128,7 @@
                                               <label >Resources Name</label>
                                               <?php  ?>
                                               
-                                              <select class="select2 form-control" data-rel="chosen" style="width: 100%;"  name="resources" id="selectError">
+                                              <select class="select3 form-control" data-rel="chosen" style="width: 100%;"  name="resources" id="selectError">
                                                 <option disabled selected>-- Search Library Resources Name --</option>
                                                     <?php 
                                                         while ($row = $results->fetch_assoc()) {
@@ -164,6 +164,7 @@
         <!-- Static Table End -->
 <script type="text/javascript">
   $('.select2').select2({});
+  $('.select3').select2({});
 </script>
 <?php
     require_once(ROOT_PATH . '/includes/layout/footer.php');
