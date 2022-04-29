@@ -66,6 +66,7 @@
                         <!-- Library Assets Section end -->
 
                         <!-- Users Section start -->
+                        <?php if($_SESSION['user']['user_type'] == 'Admin') { ?>
                         <li>
                             <a class="has-arrow" href="all-students.html" aria-expanded="false">
                                 <i class="fa fa-user icon-wrap" aria-hidden="true"></i>
@@ -76,6 +77,7 @@
                                 <li><a title="Add Students" href="add-user.php"><span class="mini-sub-pro">Add User</span></a></li>
                             </ul>
                         </li>
+                        <?php } ?>
                         <!-- Users Section end -->
                         
                         <li class="active">
@@ -84,6 +86,9 @@
                                 <span class="mini-click-non">Calendar</span>
                             </a>
                         </li>
+
+
+                        <?php if($_SESSION['user']['user_type'] == 'Admin') { ?>
                         <li>
                             <a class="has-arrow" href="" aria-expanded="false">
                                 <i class="fa fa-file icon-wrap" aria-hidden="true"></i>
@@ -99,12 +104,16 @@
                                 <li><a title="Peity Charts" href="peity.html"><span class="mini-sub-pro">Peity Charts</span></a></li>
                             </ul>
                         </li>
+                        <?php } ?>
+
+                        <?php if($_SESSION['user']['user_type'] == 'Admin') { ?>
                         <li class="active">
                             <a title="Landing Page" href="#" aria-expanded="false">
                                 <i class="fa fa-cogs icon-wrap" aria-hidden="true"></i>
                                 <span class="mini-click-non">Settings</span>
                             </a>
                         </li>
+                        <?php } ?>
                     </ul>
                 </nav>
             </div>

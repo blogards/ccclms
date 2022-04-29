@@ -30,7 +30,7 @@
                                                 <th data-field="title">Title</th>
                                                 <th data-field="qty">Borrower</th>
                                                 <th data-field="author">Borrowing Date</th>
-                                                <th data-field="author">Pick up Date</th>
+                                                <th data-field="author">Expected Pick up Date</th>
                                                 <th data-field="type">Status</th>
                                                 <th data-field="">Action</th>
                                                 
@@ -71,10 +71,6 @@
             </div>
         </div>
         <!-- Static Table End -->
-<script type="text/javascript">
-  $('.select2').select2({});
-</script>
-
 
 <?php
     require_once(ROOT_PATH . '/includes/layout/footer.php');
