@@ -4,7 +4,7 @@ if ( ! defined( 'ROOT_PATH' ) ) {
 }
 include_once(ROOT_PATH . 'config.php');
 
-$category = 'Government Publications';
+$category = 'Journals';
 $status = 'Available';
 date_default_timezone_set('Asia/Manila');
 $curtmtmp   = date('Y-m-d H:i:s');

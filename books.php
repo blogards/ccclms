@@ -104,7 +104,7 @@
                                                 $i++;
                                                     }
                                                 }else{
-                                                    echo "<td colspan='15'>No result</td>";
+                                                    echo "<td>No result</td>";
                                                 }
                                             ?>
                                         </tbody>

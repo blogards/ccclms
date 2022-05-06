@@ -14,10 +14,11 @@
                         <div class="sparkline13-list">
                             <div class="sparkline13-hd">
                                 <div class="main-sparkline13-hd">
-                                    <div class="col-lg-11 col-md-10 col-sm-11 col-xs-12">
+                                    <div class="col-lg-10 col-md-10 col-sm-11 col-xs-12">
                                         <h1>Government Publications</h1>
                                     </div>
-                                    <a class="Primary mg-b-10 btn btn-custon-rounded-two btn-success" href="#" data-toggle="modal" data-target="#PrimaryModalalert"><i class="fa fa-plus edu-plus-pro" aria-hidden="true"></i> Add New</a>
+                                    <a class="Primary mg-t-10 mg-b-10 btn btn-custon-rounded-two btn-success" href="#" data-toggle="modal" data-target="#PrimaryModalalertedit"><i class="fa fa-plus edu-plus-pro" aria-hidden="true"></i> Import</a>
+                                    <a class="Primary mg-t-10 mg-b-10 btn btn-custon-rounded-two btn-success" href="#" data-toggle="modal" data-target="#PrimaryModalalert"><i class="fa fa-plus edu-plus-pro" aria-hidden="true"></i> Add New</a>
                                 </div>
                             </div>
                             <div class="sparkline13-graph">
@@ -210,6 +211,39 @@
                             </div>
                       </div>
                     <!-- edit modal Section end -->
+
+                    <!-- Import modal section start-->
+                    <div id="PrimaryModalalertedit" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-close-area modal-close-df">
+                              <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                          </div>
+                          <div class="modal-header header-color-modal bg-color-3">
+                              <h4 class="modal-title">Import data from CSV</h4>
+                              <div class="modal-close-area modal-close-df">
+                                  <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                              </div>
+                          </div>
+                          <form id="update_form" method="post" name="userform" enctype="multipart/form-data" action="includes/logic/import-books.php">
+                          <div class="modal-body">
+                            <div class="col-lg-12 cold-md-12 col-sm12 col-xs-12">
+                                <div class="form-group">
+                                  <label >Select CSV File</label>
+                                  <input name="file" type="file" class="form-control" required>
+                                </div>
+                            </div>   
+                            <div class="modal-footer">
+                                <button class="Primary btn btn-custon-rounded-two btn-danger" data-dismiss="modal" href="#">Cancel</button>
+                                <button class="Primary mg-b-10 btn btn-custon-rounded-two btn-success" type="submit" href="#" name="import_publication_btn">Proceed</a>
+                            </div>
+                          </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Import modal section start-->
+
                     <!-- Delete modal Section Start -->
                       <div id="DangerModalhdbgcl" class="modal modal-edu-general FullColor-popup-DangerModal fade" role="dialog">
                           <div class="modal-dialog">
